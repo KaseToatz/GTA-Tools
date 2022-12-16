@@ -1,2 +1,2 @@
-# GTA-Tools
-Several tools related to GTA Online
+# gta-tools
+Automated scripts for GTA Online
