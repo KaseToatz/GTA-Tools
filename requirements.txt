@@ -2,3 +2,5 @@ pyautogui
 keyboard
 pynput
 psutil
+opencv-python
+pywin32
