@@ -18,28 +18,28 @@ mouse = Controller()
 def enter(count: int = 1) -> None:
     for i in range(count):
         press("enter")
-        sleep(0.025)
+        sleep(0.035)
         release("enter")
         if i + 1 != count:
-            sleep(0.025)
+            sleep(0.035)
 
 def scroll(count: int = 1) -> None:
     for i in range(abs(count)):
         mouse.scroll(0, -1 if count < 0 else 1)
         if i + 1 != abs(count):
-            sleep(0.025)
+            sleep(0.035)
 
 def backout(count: int = 1) -> None:
     for i in range(count):
         press("backspace")
-        sleep(0.025)
+        sleep(0.035)
         release("backspace")
         if i + 1 != count:
-            sleep(0.025)
+            sleep(0.035)
 
 def menu() -> None:
     press("m")
-    sleep(0.025)
+    sleep(0.035)
     release("m")
 
 def escape() -> None:
@@ -58,27 +58,27 @@ def enterCEO() -> None:
     sleep(0.05)
     if isVisible(CEOSELECTED):
         enter(2)
-        sleep(0.025)
+        sleep(0.035)
     backout(2)
 
 def disbandMC() -> None:
     enter()
-    sleep(0.025)
+    sleep(0.035)
     scroll()
-    sleep(0.025)
+    sleep(0.035)
     enter()
     backout(2)
 
 def buyBST() -> None:
     if isVisible(CEOSELECTED):
         enter()
-        sleep(0.025)
+        sleep(0.035)
         scroll(3)
-        sleep(0.025)
+        sleep(0.035)
         enter()
-        sleep(0.025)
+        sleep(0.035)
         scroll(-1)
-        sleep(0.025)
+        sleep(0.035)
         enter()
     if isVisible(ALERT):
         escape()
@@ -92,11 +92,11 @@ def main() -> None:
             if isVisible(MC):
                 disbandMC()
                 menu()
-                sleep(0.025)
+                sleep(0.035)
             enterCEO()
-            sleep(0.025)
+            sleep(0.035)
             menu()
-            sleep(0.025)
+            sleep(0.035)
         if isVisible(CEO):
             buyBST()
         else:
